@@ -4,7 +4,7 @@
 ## 3. cacheinv: gets the cached value of the inverse of the matrix.
 ## 4. getinv: gets the cached value of the inverse of the matrix.
 
-## makeCacheMatrix is used to to store a martix and a cached value of the inverse of the matrix.
+## The makeCacheMatrix function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix <- function(x = numeric()) {
   cache <- NULL
@@ -26,7 +26,9 @@ makeCacheMatrix <- function(x = numeric()) {
 }
 
 
-## cacheSolve calculates the inverse of the matrix created by makeCacheMatrix
+## The cacheSolve functioncomputes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+## If the inverse has already been calculated (and the matrix has not changed), 
+## then the cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
   inverse <- x$getinv()
